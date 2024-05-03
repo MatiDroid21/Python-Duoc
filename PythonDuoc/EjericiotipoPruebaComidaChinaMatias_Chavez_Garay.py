@@ -148,15 +148,19 @@ while menu_Chinos:
                 menu_Chinos = False
 
         elif opcion_menu == 7:
-
-            confirmar = int(input("¿De verdad deseas cancelar el pedido? 1.Si / 2.no > "))
-            if confirmar == 1:
-                print("=== Pedido Cancelado Por El Usuario ===")
+            if cantidad_camaronMandarin == 0 and cantidad_carneMongoliana == 0 and cantidad_chapsuiCarne == 0 and cantidad_chapsuiPollo == 0 and cantidad_parrilladaChina == 0:
+                print("No se ha ingresado ningun platillo")
                 time.sleep(2)
                 os.system("cls")
-                menu_Chinos = False
-            else:
-                opcion_menu = 6
+            else:    
+                confirmar = int(input("¿De verdad deseas cancelar el pedido? 1.Si / 2.no > "))
+                if confirmar == 1:
+                    print("=== Pedido Cancelado Por El Usuario ===")
+                    time.sleep(2)
+                    os.system("cls")
+                    menu_Chinos = False
+                else:
+                    opcion_menu = 6
         else:
             print("Opcion No Disponible")
             time.sleep(2)
