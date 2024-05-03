@@ -161,17 +161,20 @@ while menu_Chinos:
                         time.sleep(2)
                         os.system("cls")
                         confirmar = int(input("¿De verdad deseas cancelar el pedido? 1.Si / 2.no > "))
-                        if confirmar == 1:
+
+                    if confirmar == 1:
                             print("=== Pedido Cancelado Por El Usuario ===")
                             time.sleep(2)
                             os.system("cls")
                             menu_Chinos = False
-                        else:
-                            opcion_menu = 6
+                    else:
+                        opcion_menu = 6
                 except:
                     print("Se esperaba un numero")
                     time.sleep(2)
                     os.system("cls")
+                else:
+                    opcion_menu = 6
         else:
             print("Opcion No Disponible")
             time.sleep(2)
