@@ -153,14 +153,25 @@ while menu_Chinos:
                 time.sleep(2)
                 os.system("cls")
             else:    
-                confirmar = int(input("¿De verdad deseas cancelar el pedido? 1.Si / 2.no > "))
-                if confirmar == 1:
-                    print("=== Pedido Cancelado Por El Usuario ===")
+                try:
+                    confirmar = int(input("¿De verdad deseas cancelar el pedido? 1.Si / 2.no > "))
+
+                    while confirmar < 1 or confirmar > 2:
+                        print("La opción ingresada no es valida. Intente nuevamente")
+                        time.sleep(2)
+                        os.system("cls")
+                        confirmar = int(input("¿De verdad deseas cancelar el pedido? 1.Si / 2.no > "))
+                        if confirmar == 1:
+                            print("=== Pedido Cancelado Por El Usuario ===")
+                            time.sleep(2)
+                            os.system("cls")
+                            menu_Chinos = False
+                        else:
+                            opcion_menu = 6
+                except:
+                    print("Se esperaba un numero")
                     time.sleep(2)
                     os.system("cls")
-                    menu_Chinos = False
-                else:
-                    opcion_menu = 6
         else:
             print("Opcion No Disponible")
             time.sleep(2)
