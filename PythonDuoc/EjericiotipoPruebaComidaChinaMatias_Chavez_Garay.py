@@ -47,35 +47,35 @@ while menu_Chinos:
     else:
         if opcion_menu == 1:
             try:
-                cantidad_camaronMandarin = int(input("Ingrese la cantidad de camaron mandarin que desea comprar > "))
+                cantidad_camaronMandarin += int(input("Ingrese la cantidad de camaron mandarin que desea comprar > "))
             except:
                 print("Se esperaba un numero")
                 time.sleep(2)
                 os.system("cls")
         elif opcion_menu == 2:
             try:
-                cantidad_carneMongoliana = int(input("Ingrese la cantidad de carne mongoliana que desea comprar > "))
+                cantidad_carneMongoliana += int(input("Ingrese la cantidad de carne mongoliana que desea comprar > "))
             except:
                 print("Se esperaba un numero")
                 time.sleep(2)
                 os.system("cls")
         elif opcion_menu == 3:
             try:
-                cantidad_chapsuiPollo = int(input("Ingrese la cantidad de chapsui pollo que desea comprar > "))
+                cantidad_chapsuiPollo += int(input("Ingrese la cantidad de chapsui pollo que desea comprar > "))
             except:
                 print("Se esperaba un numero")
                 time.sleep(2)
                 os.system("cls")
         elif opcion_menu == 4:
             try:
-                cantidad_chapsuiCarne = int(input("Ingrese la cantidad de chapsui carne que desea comprar > "))
+                cantidad_chapsuiCarne += int(input("Ingrese la cantidad de chapsui carne que desea comprar > "))
             except:
                 print("Se esperaba un numero")
                 time.sleep(2)
                 os.system("cls")
         elif opcion_menu == 5:
             try:
-                cantidad_parrilladaChina = int(input("Ingrese la cantidad de parrillada china que desea comprar > "))
+                cantidad_parrilladaChina += int(input("Ingrese la cantidad de parrillada china que desea comprar > "))
             except:
                 print("Se esperaba un numero")
                 time.sleep(2)
