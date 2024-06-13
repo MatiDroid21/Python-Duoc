@@ -1,4 +1,5 @@
 import os
+import time
 os.system("cls")
 
 # cine
@@ -15,7 +16,7 @@ def elegir_opcion(max_opciones):
     while True:
         opcion = 0
         try:
-            opcion = int(input("Seleccione una de las opciones disponibles >>"))
+            opcion = int(input("Seleccione una de las opciones disponibles >> "))
         except:
             pass
         if opcion < 1 or opcion > max_opciones:
@@ -33,10 +34,12 @@ sala = [
 
 todas_las_entradas = []
 entradas_ocupadas = []
+registro_cliente = []
 
 def imprimir_sala():
+    
     print("\n== SALA 7 ==\n")
-   
+    print(f"Clientes : {registro_cliente}")
     print(f"ENTRADAS OCUPADAS : {entradas_ocupadas}")
 
     imprimir = ""
@@ -44,22 +47,45 @@ def imprimir_sala():
     for fila in sala:
         for asiento in fila:
             todas_las_entradas.append(asiento) # acá dejamos dentro del array todas las entradas
-
-            imprimir += f"| {asiento} "
+            if asiento in entradas_ocupadas:
+              imprimir += f"| {colorRojo(asiento)} "
+              #imprimir += f"|{asiento} "
+            else:
+              imprimir += f"| {colorVerde(asiento)} "
         imprimir += "|\n"    
-
+    print(f"Asientos Ocupados : {entradas_ocupadas}")
     print(imprimir)
+    print("\n")
 
 def comprar_entrada():
-    entrada = input("Selecciona una de las entradas disponibles >> ")
+    entrada = input("Selecciona una de las entradas disponibles >> ").upper()
 
     if entrada in todas_las_entradas and entrada not in entradas_ocupadas:
         print("ENTRADA ESTA DISPONIBLE")
         entradas_ocupadas.append(entrada)
+        registrar(entrada)
     else:
         print("No es un asiento válido ")
 
+def registrar(entrada):
+    nombre = input("Ingresa un nombre >> ")
+    apellido = input("Ingresa un apellido >> ")
+    edad = int(input("Ingrese su edad >> "))
+    registro_cliente.append([entrada,nombre,apellido,edad])
 
+def colorVerde(texto):
+    return f"\033[2:32{texto}\033[0;m"#verde
+
+def colorRojo(texto):
+    return f"\033[2:31{texto}\033[0;m" #rojo
+
+def mostrarVentas():
+    ventas = "\n ==== Ventas ===="
+    ventas += "|  Asiento  | Nombre \t| Apellido \t| Edad |\n"
+    for cliente in registro_cliente:
+        print(cliente)
+        for info in cliente:
+            ventas += f"| {info} \t"
 
 salir = False
 while not salir:
@@ -69,18 +95,32 @@ while not salir:
     if opcion == 1:
         print("== SALA ==")
         imprimir_sala()
+
     elif opcion == 2:
         print("== Comprar entrada ==")
         imprimir_sala()
         comprar_entrada()
+
     elif opcion == 3:
         print("== Eliminar entrada ==")
     elif opcion == 4:
         print("== Mostrar Ventas ==")
+        mostrarVentas()
     elif opcion == 5:
         print("== SALIR ==")
+        os.system("cls")
+        print("Cerrando procesos.")
+        time.sleep(1)
+        os.system("cls")
+        print("Cerrando procesos. .")
+        time.sleep(1)
+        os.system("cls")
+        print("Cerrando procesos. . .")
+        time.sleep(3)
+        os.system("cls")
+        print("Ejecución Finalizada")
         salir = True
     else:
         print("Opción no disponible")
 
-    input()
+    input("Presione enter para continuar")

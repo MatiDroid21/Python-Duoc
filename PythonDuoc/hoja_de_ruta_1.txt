@@ -1,0 +1,1 @@
+{'Cliente': 'manuel turizo', 'Dirección': 'sucasita', 'Sector': '1', 'Cil_5kg': 4, 'Cil_15kg': 3, 'Cil_45kg': 2}

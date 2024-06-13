@@ -26,3 +26,4 @@ for i in range(cant_personas):
     listado_personas.append(personas)
 
 print(listado_personas)
+

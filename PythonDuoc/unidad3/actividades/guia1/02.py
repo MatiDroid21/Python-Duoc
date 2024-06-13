@@ -11,7 +11,7 @@ for nom in range(3):
 for ape in range(3):
     apellido = input("Ingrese apellido >> ")
     apellidos.append(apellido)
-
+    
 os.system("cls")
 print("Nombres:",nombres)
 print("Apellidos:",apellidos)
